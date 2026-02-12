@@ -138,9 +138,9 @@ export default function OrderConfirmation() {
                 </div>
 
                 {/* Contact Footer */}
-                <div className="contact-footer">
-                    <p>For cancellations or modifications, please call</p>
-                    <a href="tel:+919876543210" className="phone">+91 98765 43210</a>
+                {/* Developer Credit */}
+                <div className="developer-credit" style={{ marginTop: '40px', fontSize: '0.8rem', color: '#6B7280', textAlign: 'center' }}>
+                    <p>This site is Developed and Managed By <strong>Adarsh Agrawal</strong> (7049590456)</p>
                 </div>
 
                 {/* Back to Menu */}

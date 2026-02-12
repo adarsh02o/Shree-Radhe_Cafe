@@ -38,6 +38,7 @@ export default function Kitchen() {
             const { data: ordersData, error: ordersError } = await supabase
                 .from('orders')
                 .select('*')
+                .gte('created_at', new Date().toISOString().split('T')[0] + 'T00:00:00.000Z')
                 .order('created_at', { ascending: false });
 
             if (ordersError) throw ordersError;
@@ -75,6 +76,14 @@ export default function Kitchen() {
                 .eq('id', orderId);
 
             if (error) throw error;
+
+            if (newStatus === 'ready') {
+                const order = orders.find(o => o.id === orderId);
+                if (order && order.phone) {
+                    const message = encodeURIComponent(`Hello ${order.customer_name}, your order #${order.order_number} at Shree Radhe Cafe is ready! 🍽️`);
+                    window.open(`https://wa.me/${order.phone.replace(/\D/g, '')}?text=${message}`, '_blank');
+                }
+            }
 
             // Update local state
             setOrders(prev =>
@@ -141,6 +150,7 @@ export default function Kitchen() {
                 <div className="admin-nav-links">
                     <Link to="/admin/kitchen" className="admin-nav-link active">Kitchen</Link>
                     <Link to="/admin/manage" className="admin-nav-link">Manage</Link>
+                    <Link to="/admin/reports" className="admin-nav-link">Reports</Link>
                 </div>
                 <button className="logout-btn" onClick={handleLogout}>
                     Logout

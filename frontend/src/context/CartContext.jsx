@@ -40,8 +40,8 @@ export function CartProvider({ children }) {
 
     const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
     const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    const tax = Math.round(subtotal * 0.05 * 100) / 100; // 5% GST
-    const total = Math.round((subtotal + tax) * 100) / 100;
+    const tax = 0; // GST removed
+    const total = subtotal;
 
     return (
         <CartContext.Provider value={{

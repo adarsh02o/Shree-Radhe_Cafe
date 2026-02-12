@@ -174,6 +174,7 @@ export default function ManageMenu() {
                 <div className="admin-nav-links">
                     <Link to="/admin/kitchen" className="admin-nav-link">Kitchen</Link>
                     <Link to="/admin/manage" className="admin-nav-link active">Manage</Link>
+                    <Link to="/admin/reports" className="admin-nav-link">Reports</Link>
                 </div>
             </div>
 

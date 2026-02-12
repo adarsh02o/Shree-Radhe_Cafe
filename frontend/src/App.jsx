@@ -8,6 +8,7 @@ import OrderConfirmation from './pages/OrderConfirmation';
 import AdminLogin from './pages/admin/AdminLogin';
 import Kitchen from './pages/admin/Kitchen';
 import ManageMenu from './pages/admin/ManageMenu';
+import Reports from './pages/admin/Reports';
 import './styles/global.css';
 
 function AppContent() {
@@ -28,6 +29,7 @@ function AppContent() {
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/kitchen" element={<Kitchen />} />
         <Route path="/admin/manage" element={<ManageMenu />} />
+        <Route path="/admin/reports" element={<Reports />} />
       </Routes>
     </div>
   );

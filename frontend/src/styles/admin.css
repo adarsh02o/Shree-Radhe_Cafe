@@ -848,3 +848,112 @@
 .confirm-modal .modal-actions {
     justify-content: center;
 }
+
+/* ============================================================ */
+/* Admin Reports Page                                           */
+/* ============================================================ */
+.reports-controls {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--white);
+    padding: 16px;
+    border-radius: var(--radius-lg);
+    border: 1.5px solid var(--gray-100);
+}
+
+.reports-controls label {
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.date-input {
+    padding: 8px 12px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    color: var(--dark);
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.summary-card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    border: 1.5px solid var(--gray-100);
+    box-shadow: var(--shadow-sm);
+}
+
+.summary-card h3 {
+    font-size: 0.9rem;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.summary-card p {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.split-stat {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    margin-top: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.report-items {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--gray-600);
+}
+
+.pay-mode-badge {
+    padding: 4px 10px;
+    background: var(--gray-100);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.payment-toggle {
+    border: none;
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.payment-toggle.paid {
+    background: #DCFCE7;
+    color: #166534;
+}
+
+.payment-toggle.unpaid {
+    background: #FEE2E2;
+    color: #991B1B;
+}
+
+.badge.paid {
+    padding: 4px 10px;
+    background: #DCFCE7;
+    color: #166534;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+}

@@ -45,7 +45,7 @@ export default function Checkout() {
                     payment_method: paymentMethod,
                     status: 'pending',
                     subtotal: subtotal,
-                    tax: tax,
+                    tax: 0,
                     total: total,
                 })
                 .select()
@@ -127,21 +127,9 @@ export default function Checkout() {
         {
             id: 'cash',
             name: 'Cash',
-            desc: 'Pay at counter / on delivery',
+            desc: 'Pay at counter',
             icon: '💵',
-        },
-        {
-            id: 'upi',
-            name: 'UPI',
-            desc: 'Pay using any UPI app',
-            icon: '📱',
-        },
-        {
-            id: 'qr',
-            name: 'QR Code',
-            desc: 'Scan code at counter',
-            icon: '📷',
-        },
+        }
     ];
 
     return (

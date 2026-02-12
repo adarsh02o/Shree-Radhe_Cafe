@@ -105,10 +105,11 @@ export default function ReviewOrder() {
                         <span>Subtotal</span>
                         <span>₹{subtotal.toFixed(2)}</span>
                     </div>
-                    <div className="price-row">
+                    {/* GST Removed */}
+                    {/* <div className="price-row">
                         <span>GST (5%)</span>
                         <span>₹{tax.toFixed(2)}</span>
-                    </div>
+                    </div> */}
                     <div className="price-row total">
                         <span>Total Preview</span>
                         <span className="amount">₹{total.toFixed(2)}</span>
