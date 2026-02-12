@@ -1,0 +1,218 @@
+/* ============================================================ */
+/* Order Confirmation Page */
+/* ============================================================ */
+.confirmation-page {
+    min-height: 100vh;
+    background: var(--white);
+    padding-bottom: 40px;
+}
+
+.confirmation-content {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Success Header */
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    animation: bounceIn 0.6s ease;
+}
+
+.success-icon svg {
+    width: 40px;
+    height: 40px;
+    color: var(--white);
+}
+
+.confirmation-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    animation: fadeInUp 0.4s ease 0.2s both;
+}
+
+.confirmation-content>p {
+    color: var(--gray-500);
+    font-size: 0.9rem;
+    margin-bottom: 32px;
+    animation: fadeInUp 0.4s ease 0.3s both;
+}
+
+/* Order Number */
+.order-number-section {
+    padding: 20px 0;
+    border-top: 1px solid var(--gray-100);
+    border-bottom: 1px solid var(--gray-100);
+    margin-bottom: 24px;
+    animation: fadeInUp 0.4s ease 0.4s both;
+}
+
+.order-number-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gray-400);
+    margin-bottom: 4px;
+}
+
+.order-number-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+/* Estimated Time */
+.estimated-time {
+    background: var(--primary-light);
+    border: 1.5px solid rgba(34, 197, 94, 0.2);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    margin-bottom: 32px;
+    animation: fadeInUp 0.4s ease 0.5s both;
+}
+
+.estimated-time .time-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--primary-dark);
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.estimated-time .time-value {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+/* Order Summary */
+.order-summary-section {
+    text-align: left;
+    animation: fadeInUp 0.4s ease 0.6s both;
+}
+
+.order-summary-section h3 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gray-400);
+    margin-bottom: 16px;
+}
+
+.summary-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.summary-item-left {
+    display: flex;
+    gap: 10px;
+}
+
+.summary-item-qty {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 0.85rem;
+}
+
+.summary-item-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.summary-item-note {
+    font-size: 0.8rem;
+    color: var(--gray-400);
+    margin-top: 2px;
+}
+
+.summary-item-price {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--dark);
+}
+
+/* Summary Totals */
+.summary-totals {
+    padding-top: 16px;
+    margin-top: 8px;
+    border-top: 1px solid var(--gray-100);
+}
+
+.summary-total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    font-size: 0.85rem;
+    color: var(--gray-500);
+}
+
+.summary-total-row.final {
+    padding-top: 12px;
+    margin-top: 4px;
+    border-top: 1px solid var(--gray-200);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--dark);
+}
+
+/* Contact Footer */
+.contact-footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 4px solid var(--gray-50);
+    text-align: center;
+    animation: fadeInUp 0.4s ease 0.7s both;
+}
+
+.contact-footer p {
+    font-size: 0.85rem;
+    color: var(--gray-400);
+}
+
+.contact-footer .phone {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Status update notification */
+.order-status-banner {
+    margin: 16px 0 8px;
+    padding: 16px 20px;
+    border-radius: var(--radius-md);
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.order-status-banner.pending {
+    background: #FEF3C7;
+    color: #92400E;
+    border: 1.5px solid #F59E0B;
+}
+
+.order-status-banner.preparing {
+    background: #DBEAFE;
+    color: #1E40AF;
+    border: 1.5px solid #3B82F6;
+}
+
+.order-status-banner.ready {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    border: 1.5px solid var(--primary);
+    animation: pulse 1.5s ease-in-out infinite;
+}

@@ -1,0 +1,151 @@
+/* ============================================================ */
+/* Welcome Page */
+/* ============================================================ */
+.welcome-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-hero {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 0;
+    background: linear-gradient(135deg, #8B6914 0%, #A0845C 40%, #C4A265 100%);
+    min-height: 100vh;
+}
+
+.welcome-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(0, 0, 0, 0.2) 0%, transparent 50%);
+}
+
+.welcome-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+}
+
+.welcome-card {
+    position: relative;
+    z-index: 2;
+    background: var(--white);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    padding: 40px 30px 50px;
+    text-align: center;
+    width: 100%;
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.welcome-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--primary-light);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 1.8rem;
+    animation: bounceIn 0.6s ease 0.3s both;
+}
+
+.welcome-card h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.welcome-card p {
+    color: var(--gray-500);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.welcome-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.welcome-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gray-300);
+    transition: var(--transition);
+}
+
+.welcome-dots .dot.active {
+    background: var(--primary);
+    width: 8px;
+}
+
+/* Decorative floating elements */
+.welcome-decoration {
+    position: absolute;
+    z-index: 1;
+}
+
+.welcome-decoration.d1 {
+    top: 15%;
+    left: 10%;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.welcome-decoration.d2 {
+    top: 25%;
+    right: 15%;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite 1s;
+}
+
+.welcome-decoration.d3 {
+    top: 40%;
+    left: 60%;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 50%;
+    animation: float 7s ease-in-out infinite 0.5s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+}
