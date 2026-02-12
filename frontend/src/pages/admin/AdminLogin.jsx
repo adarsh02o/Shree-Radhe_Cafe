@@ -4,19 +4,21 @@ import { supabase } from '../../supabase';
 import '../../styles/admin.css';
 
 // ─── Admin Credentials ─────────────────────────────────────
-// Change these to update admin login credentials
-const ADMIN_EMAIL = 'agrawaladarsh303@gmail.com';
-const ADMIN_PASSWORD = 'Cafe@#123';
+// Credentials are now loaded from .env file for security
+const ADMIN_EMAIL = import.meta.env.VITE_ADMIN_EMAIL || 'admin@cafe.com';
+const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || 'admin123';
 // ────────────────────────────────────────────────────────────
 
 export default function AdminLogin() {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
     async function handleLogin(e) {
+        // ... (function body remains same)
         e.preventDefault();
         if (!email || !password) {
             setError('Please enter email and password');
@@ -73,13 +75,35 @@ export default function AdminLogin() {
 
                     <div className="form-group">
                         <label className="form-label">Password</label>
-                        <input
-                            type="password"
-                            className="form-input"
-                            placeholder="Enter your password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
+                        <div className="password-input-wrapper" style={{ position: 'relative' }}>
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                className="form-input"
+                                placeholder="Enter your password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                style={{ paddingRight: '40px' }}
+                            />
+                            <button
+                                type="button"
+                                onClick={() => setShowPassword(!showPassword)}
+                                style={{
+                                    position: 'absolute',
+                                    right: '10px',
+                                    top: '50%',
+                                    transform: 'translateY(-50%)',
+                                    background: 'none',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    fontSize: '1.2rem',
+                                    padding: '0',
+                                    color: '#6B7280'
+                                }}
+                                title={showPassword ? "Hide password" : "Show password"}
+                            >
+                                {showPassword ? "👁️" : "🙈"}
+                            </button>
+                        </div>
                     </div>
 
                     {error && <p className="error-msg">{error}</p>}
